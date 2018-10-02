@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul">
+    <div align="center">
+        <label value="VideoCapitol: Menu Cliente" style="font-size:20px; color:blue; font-weight: bold" />
+        <hbox align="center">
+            <window title="Menu Cliente" id="menuCliente" width="320px" border="normal">
+                <div align="center">
+                  
+                    <div height="20px"/> 
+                    Películas
+                    <toolbar>
+                        
+                        <toolbarbutton label="Lista de Películas" href="PeliculaListC.zul"/>
+                    </toolbar>
+                    <div height="20px"/> 
+                    Reservas
+                    <toolbar>
+                        <toolbarbutton label="Realizar Reserva" href="ReservaAddC.zul"/>
+                    </toolbar>
+                </div>
+                <toolbar>
+                    <toolbarbutton label="Cerrar Sesión" href="index.zul"/>
+	    	
+                </toolbar>
+            </window>
+        </hbox>
+    </div> 
+</zk>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" ?>
+<zk xmlns="http://www.zkoss.org/2005/zul">
+    <div align="center">
+        <label value="VideoCapitol" style="font-size:20px; color:blue; font-weight: bold" />
+        <hbox align="center">
+            <window title="AddCliente" id="addCliente" width="320px" border="normal" apply="com.xoftix.controller.ClienteAddController">
+                Agregar Cliente
+                
+                <div height="10px"/>
+                <hbox>
+                    <vbox width="70px">
+                        <label value="Nombre"/>
+                    </vbox>
+                    <vbox>
+                        <textbox id="txtNombre" value="" width="160px"/>
+                    </vbox>
+                </hbox> 
+                 <div height="20px"/>
+                <hbox>
+                    <vbox width="70px">
+                        <label value="RUT"/>
+                    </vbox>
+                    <vbox>
+                        <textbox id="txtRUT" value="" width="100px"/>
+                    </vbox>
+                </hbox>
+                <div height="10px"/>
+                <hbox>
+                    <vbox width="70px">
+                        <label value="Direccion"/>
+                    </vbox>
+                    <vbox>
+                        <textbox id="txtDireccion" value="" width="160px"/>
+                    </vbox>
+                </hbox> 
+                <div height="10px"/>
+                <hbox>
+                    <vbox width="70px">
+                        <label value="Telefono"/>
+                    </vbox>
+                    <vbox>
+                        <textbox id="txtTelefono" value="" width="160px"/>
+                    </vbox>
+                </hbox> 
+                <div height="20px"/>
+                <div align="center">
+                    <hbox>
+                        <button id="btnAddCliente" label="Agregar Cliente" width="90px" style="color:blue" onClick=""/>
+                        <div height="7px"/>
+                        <button id="btnLimpiar" label="Limpiar" width="90px" style="color:blue" onClick=""/>
+                    </hbox>
+                </div> 
+                <div height="20px"/> 
+                <toolbar>
+                    <toolbarbutton label="Atrás" href="MenuAdmin.zul"/>
+	    	
+                </toolbar>        
+            </window>
+        </hbox>
+    </div>
+</zk>

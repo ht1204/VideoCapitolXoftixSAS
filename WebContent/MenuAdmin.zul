@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul">
+    <div align="center">
+        <label value="VideoCapitol: Menu Admin" style="font-size:20px; color:blue; font-weight: bold" />
+        <hbox align="center">
+            <window title="Menu Admin" id="menuAdmin" width="320px" border="normal">
+                <div align="center">
+                    Usuarios
+                    <toolbar>
+                        <toolbarbutton label="Agregar Usuario" href="UserAdd.zul"/>
+                        <toolbarbutton label="Editar Usuario" href="UserEdit.zul"/>
+                        <toolbarbutton label="Listar Usuario" href="UserList.zul"/>
+                        <toolbarbutton label="Eliminar Usuario" href="UserDelete.zul"/>
+                    </toolbar>
+                    <div height="20px"/> 
+                    Clientes
+                    <toolbar>
+                        <toolbarbutton label="Agregar Cliente" href="ClientAdd.zul"/>
+                        <toolbarbutton label="Editar Cliente" href="ClientEdit.zul"/>
+                        <toolbarbutton label="Listar Cliente" href="ClientList.zul"/>
+                        <toolbarbutton label="Eliminar Cliente" href="ClienteDelete.zul"/>
+                    </toolbar>
+                    <div height="20px"/> 
+                    Películas
+                    <toolbar>
+                        <toolbarbutton label="Agregar Película" href="PeliculaAdd.zul"/>
+                        <toolbarbutton label="Editar Película" href="PeliculaEdit.zul"/>
+                        <toolbarbutton label="Listar Película" href="PeliculaList.zul"/>
+                        <toolbarbutton label="Eliminar Película" href="PeliculaDelete.zul"/>
+                    </toolbar>
+                    <div height="20px"/> 
+                    Reservas
+                    <toolbar>
+                        <toolbarbutton label="Agregar Reserva" href="ReservaAdd.zul"/>
+                        <toolbarbutton label="Listar Reserva" href="ReservaList.zul"/>
+                        <toolbarbutton label="Eliminar Reserva" href="ReservaDelete.zul"/>
+                    </toolbar>
+                </div>
+                <toolbar>
+                    <toolbarbutton label="Cerrar Sesión" href="index.zul"/>
+	    	
+                </toolbar>
+            </window>
+        </hbox>
+    </div>                
+</zk>

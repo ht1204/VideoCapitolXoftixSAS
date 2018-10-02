@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" ?>
+<zk xmlns="http://www.zkoss.org/2005/zul">
+ <hbox align="center">
+        <window title="Lista de Reservas" id="reservaList"  border="normal" apply="com.xoftix.controller.ReservaListController">
+            Lista de Reservas
+           
+            <listbox id="reservaListbox" height="160px" emptyMessage="No se encontraron clientes">
+                <listhead>
+                    <listheader label="ID Reserva" />
+                    <listheader label="RUT Cliente" />
+                    <listheader label="ID Película" />
+                    <listheader label="Date" />
+                </listhead>
+                <listitem>
+                    <listcell label="ID Reserva" ></listcell>
+                    <listcell label="RUT Cliente"></listcell>
+                    <listcell label="ID Película"></listcell>
+                    <listcell label="Date" ></listcell>
+                </listitem>
+            </listbox>
+            <toolbar>
+                <toolbarbutton label="Atrás" href="MenuAdmin.zul"/>
+	    	
+            </toolbar>
+        </window>
+    </hbox>
+</zk>

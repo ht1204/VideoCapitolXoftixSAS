@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul">
+    <hbox align="center">
+        <window title="Lista de clientes" id="clientList"  border="normal" >
+            Lista de Clientes
+           
+            <listbox id="clienteListbox" height="160px" emptyMessage="No se encontraron clientes">
+                <listhead>
+                    <listheader label="RUT" />
+                    <listheader label="Nombre" />
+                    <listheader label="Dirección" />
+                    <listheader label="Teléfono" />
+                    
+                </listhead>
+                <listitem>
+                    <listcell label="RUT"></listcell>
+                    <listcell label="Nombre" ></listcell>
+                    <listcell label="Dirección"></listcell>
+                    <listcell label="Teléfono"></listcell>
+                </listitem>
+            </listbox>
+            <toolbar>
+                <toolbarbutton label="Atrás" href="MenuAdmin.zul"/>
+	    	
+            </toolbar>
+        </window>
+    </hbox>
+</zk>

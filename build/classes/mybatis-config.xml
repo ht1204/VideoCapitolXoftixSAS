@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	
+	<settings>
+		<setting name="cacheEnabled" value="true" />
+	</settings>
+	
+	<typeAliases>
+		<typeAlias type="com.xoftix.bean.Cliente" alias="cliente" />
+		<typeAlias type="com.xoftix.bean.Movie" alias="movie" />
+		<typeAlias type="com.xoftix.bean.Reserva" alias="reserva" />
+		<typeAlias type="com.xoftix.bean.User" alias="user" />
+	</typeAliases>
+
+	<environments default="jndi_conection">
+		<environment id="jndi_conection">
+			<transactionManager type="JDBC" />
+			<dataSource type="JNDI">
+				<property name="data_source" value="java:jboss/datasources/ExampleDS" />
+			</dataSource>
+		</environment>
+	</environments>
+
+	<mappers>
+		<mapper resource="mapper/clienteMapper.xml" />
+		<mapper resource="mapper/ddlMapper.xml" />
+		<mapper resource="mapper/dmlMapper.xml" />
+		<mapper resource="mapper/movieMapper.xml" />
+		<mapper resource="mapper/reservaMapper.xml" />
+		<mapper resource="mapper/userMapper.xml" />
+	</mappers>
+
+	
+</configuration>

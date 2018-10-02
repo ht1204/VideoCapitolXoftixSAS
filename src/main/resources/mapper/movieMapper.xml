@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xoftix.mapper.MovieMapper">
+
+	<resultMap id="movieMap" type="movie">
+		<result column="IDMovie" property="IDMovie" />
+		<result column="title" property="title" />
+		<result column="description" property="description" />
+		<result column="actorList" property="actorList" />
+		<result column="director" property="director" />
+		<result column="stockMin" property="stockMin" />
+		<result column="stockMax" property="stockMax" />
+	</resultMap>
+	
+	<sql id="sqlSelect">
+		SELECT
+		m.IDMovie,
+		m.title,
+		m.descripcion,
+		m.actorList,
+		m.director,
+		m.stockMin,
+		m.stockMax,
+		FROM movie m
+	</sql>
+
+
+<select id="findAll" resultMap="movieMap" parameterType="java.util.List">
+		<include refid="sqlSelect"></include>
+		<if test="IDCliente != null">
+		   , reserva reserve
+		</if>
+		<trim prefix="WHERE" prefixOverrides="AND |OR ">
+			<if test="title != null">
+				AND lower(title) like '%${title}%'
+			</if>
+			<if test="IDCliente != null">
+			   AND rs.IDMovie = m.IDMovie,
+			   AND rs.IDCliente = #{IDCliente}
+			</if>
+		</trim>
+		limit ${size} offset ${pagina}
+	</select>
+	
+	<select id="findAllByMap" resultMap="movieMap" parameterType="java.util.Map">
+		<include refid="sqlSelect"></include>
+		<if test="IDCliente != null">
+		   , reserva reserve
+		</if>
+		<trim prefix="WHERE" prefixOverrides="AND |OR ">
+			<if test="title != null">
+				AND lower(title) like '%${title}%'
+			</if>
+			<if test="IDCliente != null">
+			   AND rs.IDMovie = m.IDMovie,
+			   AND rs.IDCliente = #{IDCliente}
+			</if>
+		</trim>
+		limit ${size} offset ${pagina}
+	</select>
+	
+	
+	<select id="getStock" parameterType="java.lang.Long" resultType="java.lang.Integer"> 
+	   SELECT (stockMax - (SELECT count(1) FROM reserva where IDMovie = m.IDMovie)) as stockExistente 
+	   FROM movie m
+	   WHERE IDMovie = #{IDMovie}
+	</select>
+	
+	<insert id="guardarMovie" parameterType="movie" useGeneratedKeys="true"
+		keyColumn="IDMovie" keyProperty="IDMovie"> 
+         INSERT INTO movie (title, description,actorList, director,stockMin,stockMax)
+         VALUES (#{title},#{description}, #{actorList}, #{director},#{stockMin},#{stockMax})
+	</insert>
+	
+	<select id="findMovieID" resultType="java.lang.Integer" parameterType="java.lang.Integer">
+		select IDMovie from movie WHERE IDMovie = #{IDMovie}
+	</select>
+	
+	<update id="editarMovie" parameterType="movie">
+		 UPDATE movie SET title=#{title},
+		 description=#{description},
+         actorList=#{actorList},
+         director=#{director},
+		 stockMin=#{stockMin},
+		 stockMax=#{stockMax}	
+         WHERE IDMovie=#{IDMovie}
+	</update>
+	
+	<delete id = "deleteMovie" parameterType = "java.lang.String">
+     	 DELETE FROM movie WHERE title = #{title};
+   	</delete>
+
+</mapper>

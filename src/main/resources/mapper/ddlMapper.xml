@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xoftix.mapper.DDLMapper">
+
+<insert id="createTable">
+CREATE TABLE user (
+		IDUser bigint auto_increment primary key,
+		userName varchar not null, 
+		pass varchar not null,
+		login varchar not null,
+		tipoUsuario int not null, 
+		UNIQUE KEY usuarioLogin (login));
+		
+		CREATE TABLE cliente (
+		IDCliente bigint auto_increment primary key, 
+		rut varchar not null,
+		name varchar not null, 
+		address varchar not null, 
+		tel bigint not null,
+		IDUser int not null,
+		FOREIGN KEY (IDUser) REFERENCES public.user(IDUser));	
+		
+		
+
+
+		CREATE TABLE movie (
+		 IDMovie bigint auto_increment primary key,
+		 title varchar not null, 
+		 description text not null, 
+		 actorList varchar, 
+		 director varchar not null, 
+		 stockMin integer not null default 1,
+		 stockMax integer not null default 100);
+
+		CREATE TABLE reserva (
+		IDReserve bigint auto_increment primary key, 
+		IDMovie bigint not null,
+		IDCliente bigint not null, 
+		date timestamp not null,
+	    FOREIGN KEY (IDMovie) REFERENCES public.movie(IDMovie),
+	    FOREIGN KEY (IDCliente) REFERENCES public.cliente(IDCliente),
+	    UNIQUE KEY reserveMovieCliente (IDMovie, IDCliente));
+
+</insert>
+
+<insert id="insertUsuario">
+insert into user values (1,'admin','admin','admin',1);
+insert into user values (2,'jsernag','jsernag','jsernag',2);
+insert into cliente values(1,'222', 'Jose Serna','Los Alpes',32566334,2);
+insert into movie values(1,'Avengers','Los mas poderosos del planeta','Robert Downey Jr., Scarlett Johansson','Peyton Reed',1,20);
+</insert>
+
+</mapper>

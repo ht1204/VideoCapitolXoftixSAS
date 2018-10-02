@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xoftix.mapper.UserMapper">
+	
+	<resultMap id="userMap" type="user">
+		<result column="IDUser" property="IDUser" />
+		<result column="userName" property="userName" />
+		<result column="pass" property="pass" />
+		<result column="login" property="login" />
+		<result column="tipoUsuario" property="tipoUsuario" />
+	</resultMap>
+	
+	
+	<insert id="guardarUser" parameterType="user" useGeneratedKeys="true"
+		keyColumn="IDUser" keyProperty="IDUser"> 
+         INSERT INTO user (userName, pass, login, tipoUsuario)
+         VALUES (#{userName},#{pass}, #{login}, #{tipoUsuario})
+	</insert>
+	
+	<update id="editUser" parameterType="user" > 
+         UPDATE user SET username=#{userName},
+         pass=#{pass},
+         login=#{login},
+         tipoUsuario=#{tipoUsuario}
+         WHERE IDUser=#{IDUser}
+	</update>
+	
+	 <delete id = "deleteUser" parameterType = "java.lang.String">
+     	 DELETE FROM user WHERE username = #{username};
+   	</delete>
+
+	<sql id="sqlSelect">
+			SELECT
+			IDUser,
+			userName,
+			tipoUsuario
+			FROM user
+	</sql>
+	
+	
+	<select id="login" parameterType="user" resultType="user">
+		<include refid="sqlSelect"></include>
+		WHERE login = #{login} AND pass = #{pass}
+	</select>
+	
+	<select id="findUserId" resultMap="userMap" parameterType="java.lang.Long">
+		<include refid="sqlSelect"></include>
+		WHERE IDUser = #{IDUser}
+	</select>
+	
+	<select id="userLogin" resultType="java.lang.Boolean" parameterType="java.lang.String">  
+	  SELECT CASE WHEN count(1) > 0 THEN true ELSE false END as resultado FROM user WHERE login = #{login}
+	</select>
+	
+	<select id="selectUserType" resultType="java.lang.Integer" parameterType="java.lang.String">
+		select tipoUsuario from user WHERE login = #{login}
+	</select>
+	
+	<select id="selectList" resultMap="userMap" >
+			SELECT
+			userName,
+			pass,
+			login,
+			tipoUsuario
+			FROM user
+	</select>
+	
+</mapper>

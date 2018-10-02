@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" ?>
+<zk xmlns="http://www.zkoss.org/2005/zul">
+ <hbox align="center">
+        <window title="Lista de Reservas" id="reservaList"  border="normal" apply="com.xoftix.controller.ReservaListClienteController">
+            Lista de Reservas Por Cliente
+            
+            <div align="center">
+             <div height="20px"/>
+                <hbox>
+                    <vbox width="70px">
+                        <label value="RUT"/>
+                    </vbox>
+                    <vbox>
+                        <textbox id="txtRUT" value="" width="160px"/>
+                    </vbox>
+                </hbox> 
+                
+                  <div align="center">
+                    <hbox>
+                        <button id="btnReservaCliente" label="Buscar Reserva Cliente" width="90px" style="color:blue" onClick=""/>
+                        <div height="7px"/>
+                        <button id="btnLimpiar" label="Cancel" width="90px" style="color:blue" onClick=""/>
+                    </hbox>
+                </div> 
+            </div>
+           <div height="10px"/>
+            <listbox id="reservaListbox" height="160px" emptyMessage="No se encontraron clientes">
+                <listhead>
+                    <listheader label="ID Reserva" />
+                    <listheader label="RUT Cliente" />
+                    <listheader label="ID Película" />
+                    <listheader label="Date" />
+                </listhead>
+                <listitem>
+                    <listcell label="ID Reserva" ></listcell>
+                    <listcell label="RUT Cliente"></listcell>
+                    <listcell label="ID Película"></listcell>
+                    <listcell label="Date" ></listcell>
+                </listitem>
+            </listbox>
+            <toolbar>
+                <toolbarbutton label="Atrás" href="MenuAdmin.zul"/>
+	    	
+            </toolbar>
+        </window>
+    </hbox>
+</zk>

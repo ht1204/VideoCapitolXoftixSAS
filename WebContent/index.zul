@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul">
+    <div align="center">
+        <label value="VideoCapitol" style="font-size:20px; color:blue; font-weight: bold" />
+        <hbox align="center">
+            <window title="Login VideoCapitol" id="winLogin" width="320px" border="normal" apply="com.xoftix.controller.IndexController">
+                <div height="20px"/>
+                <hbox>
+                    <vbox width="70px">
+                        <label value="User"/>
+                    </vbox>
+                    <vbox>
+                        <textbox id="txtUsername" value="" width="160px"/>
+                    </vbox>
+                </hbox> 
+                <div height="10px"/>
+                <hbox>
+                    <vbox width="70px">
+                        <label value="Password"/>
+                    </vbox>
+                    <vbox>
+                        <textbox id="txtPassword" value="" type="password" width="160px"/>
+                    </vbox>
+                </hbox> 
+                <div height="20px"/>
+                <div align="center">
+                    <hbox>
+                        <button id="btnLogin" label="Login" width="90px" style="color:blue" />
+                        <div height="7px"/>
+                        <button id="btnCancel" label="Cancel" width="90px" style="color:blue" />
+                    </hbox>
+                </div> 
+                <div height="20px"/>         
+            </window>
+        </hbox>
+    </div>
+</zk>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" ?>
+<zk xmlns="http://www.zkoss.org/2005/zul">
+<div align="center">
+        <label value="VideoCapitol" style="font-size:20px; color:blue; font-weight: bold" />
+        <hbox align="center">
+            <window title="EditUser" id="editUser" width="320px" border="normal" apply="com.xoftix.controller.UserEditController">
+                Editar Usuario
+                 <div height="20px" />
+                <hbox>
+                    <vbox width="70px">
+                        <label value="ID Usuario"/>
+                    </vbox>
+                    <vbox>
+                        <textbox id="txtIdUser"  value="" width="80px"/>
+                    </vbox>
+                </hbox> 
+                <div height="20px"/>
+                <hbox>
+                    <vbox width="70px">
+                        <label value="Nombre de usuario"/>
+                    </vbox>
+                    <vbox>
+                        <textbox id="txtUsername" value="" width="80px"/>
+                    </vbox>
+                </hbox> 
+                <div height="10px"/>
+                <hbox>
+                    <vbox width="70px">
+                        <label value="Contraseña"/>
+                    </vbox>
+                    <vbox>
+                        <textbox id="txtPassword" type="password" value="" width="160px"/>
+                    </vbox>
+                </hbox> 
+                 <div height="30px"/>
+                <hbox>
+                   <zscript>
+  						<![CDATA[
+        					String[] userTypes = { "Administrador", "Cliente"};
+        					//(Optional) Default Select ZK 
+    						String selectedUser = userTypes[0]; 
+    				]]></zscript>
+    				<hlayout>
+    					<combobox id="typeUser" model="@{userTypes}" selectedItem="@{selectedUser}" />
+    				</hlayout>
+                </hbox>
+                <div height="20px"/>
+                <div align="center">
+                    <hbox>
+                        <button id="btnEditUser" label="Editar Usuario" width="90px" style="color:blue" onClick=""/>
+                        <div height="7px"/>
+                        <button id="btnLimpiar" label="Limpiar" width="90px" style="color:blue" onClick=""/>
+                    </hbox>
+                </div> 
+                <div height="20px"/> 
+                <toolbar>
+                    <toolbarbutton label="Atrás" href="MenuAdmin.zul"/>
+	    	
+                </toolbar>        
+            </window>
+        </hbox>
+    </div>
+</zk>

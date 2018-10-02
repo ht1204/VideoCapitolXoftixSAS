@@ -1,0 +1,19 @@
+<zk xmlns="http://www.zkoss.org/2005/zul">
+    <div align="center">
+        <label value="VideoCapitol: Menu Admin" style="font-size:20px; color:blue; font-weight: bold" />
+        <hbox align="center">
+            <window title="Listado_Reservas" id="listadoReservas" width="320px" border="normal">
+                <div align="center">
+                    Listados de Reservas
+                    <toolbar>
+                        <toolbarbutton label="Listado Reservas" href="ListReserveClient.zul"/>
+                        <toolbarbutton label="Listado Reservas por cliente" href="ListReserve.zul"/>
+                    </toolbar>
+                  </div>
+                <toolbar>
+                    <toolbarbutton label="Atrás" href="MenuAdmin.zul"/>
+	    	    </toolbar>
+            </window>
+        </hbox>
+    </div>                
+</zk>

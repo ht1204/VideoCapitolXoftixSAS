@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul">
+    <div align="center">
+        <label value="VideoCapitol" style="font-size:20px; color:blue; font-weight: bold" />
+        <hbox align="center">
+            <window title="EditPelicula" id="editPelicula" width="320px" border="normal" apply="com.xoftix.controller.MovieEditController">
+                Editar Película
+                <div height="20px"/>
+                <hbox>
+                    <vbox width="70px">
+                        <label value="ID Pelicula"/>
+                    </vbox>
+                    <vbox>
+                        <textbox id="txtIdPelicula" value="" width="100px"/>
+                    </vbox>
+                </hbox> 
+                <div height="20px"/>
+                <hbox>
+                    <vbox width="70px">
+                        <label value="Título"/>
+                    </vbox>
+                    <vbox>
+                        <textbox id="txtTitle" value="" width="120px"/>
+                    </vbox>
+                </hbox> 
+                <div height="10px"/>
+                <hbox>
+                    <vbox width="90px">
+                        <label value="Descripción General"/>
+                    </vbox>
+                    <vbox>
+                        <textbox id="txtDescription"  value="" width="160px"/>
+                    </vbox>
+                </hbox> 
+                <div height="10px"/>
+                <hbox>
+                    <vbox width="70px">
+                        <label value="Lista Actores"/>
+                    </vbox>
+                    <vbox>
+                        <textbox id="txtActorList" value="" width="160px"/>
+                    </vbox>
+                </hbox> 
+                <div height="10px"/>
+                <hbox>
+                    <vbox width="70px">
+                        <label value="Director"/>
+                    </vbox>
+                    <vbox>
+                        <textbox id="txtDirector" value="" width="80px"/>
+                    </vbox>
+                </hbox> 
+                 <div height="10px"/>
+                <hbox>
+                    <vbox width="70px">
+                        <label value="StockMin"/>
+                    </vbox>
+                    <vbox>
+                        <textbox id="txtStockMin" value="" width="160px"/>
+                    </vbox>
+                </hbox> 
+                  <div height="10px"/>
+                <hbox>
+                    <vbox width="70px">
+                        <label value="StockMax"/>
+                    </vbox>
+                    <vbox>
+                        <textbox id="txtStockMax" value="" width="160px"/>
+                    </vbox>
+                </hbox>
+                <div height="20px"/>
+                <div align="center">
+                    <hbox>
+                        <button id="btnEditPelicula" label="Editar Película" width="90px" style="color:blue" onClick=""/>
+                        <div height="7px"/>
+                        <button id="btnLimpiar" label="Limpiar" width="90px" style="color:blue" onClick=""/>
+                    </hbox>
+                </div> 
+                <div height="20px"/> 
+                <toolbar>
+                    <toolbarbutton label="Atrás" href="MenuAdmin.zul"/>
+	    	
+                </toolbar>        
+            </window>
+        </hbox>
+    </div>
+</zk>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul">
+    <hbox align="center">
+        <window title="Lista de peliculas" id="peliculaCList"  border="normal" apply="" >
+            Lista de Películas
+           
+            <listbox id="peliculaCListbox" height="160px" emptyMessage="No se encontraron peliculas">
+                <listhead>
+                    <listheader label="ID" />
+                    <listheader label="Título" />
+                    <listheader label="Descripción General" />
+                    <listheader label="Lista de actores" />
+                    <listheader label="Director" />
+                    <listheader label="Cantidad" />
+                </listhead>
+                <listitem>
+                    <listcell label="ID"></listcell>
+                    <listcell label="Título" ></listcell>
+                    <listcell label="Descripción General"></listcell>
+                    <listcell label="Lista de actores"></listcell>
+                    <listcell label="Director"></listcell>
+                    <listcell label="Cantidad"></listcell>
+                </listitem>
+            </listbox>
+            <toolbar>
+                <toolbarbutton label="Atrás" href="MenuCliente.zul"/>
+	    	
+            </toolbar>
+        </window>
+    </hbox>
+</zk>

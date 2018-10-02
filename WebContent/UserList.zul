@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" ?>
+<zk xmlns="http://www.zkoss.org/2005/zul">
+    <hbox align="center">
+        <window title="Lista de usuarios" id="userList"  border="normal" >
+            Lista de Usuarios
+           <div>
+    
+            <listbox id="userListbox" model="" height="160px" emptyMessage="No se encontraron usuarios" apply="com.xoftix.controller.UserListController" >
+                <listhead>
+                    <listheader label="ID" />
+                    <listheader label="Username" />
+                    <listheader label="Password" />
+                    <listheader label="login" />
+                    <listheader label="TipoUsuario" />
+                </listhead>
+                <listitem>
+                    <listcell label="${each.ID}" ></listcell>
+                    <listcell label="${each.Username}"></listcell>
+                    <listcell label="${each.Password}"></listcell>
+                    <listcell label="${each.login}"></listcell>
+                    <listcell label="${each.TipoUsuario}"></listcell>
+                </listitem>
+            </listbox>
+           </div>
+            <toolbar>
+                <toolbarbutton label="Atrás" href="MenuAdmin.zul"/>
+	    	
+            </toolbar>
+        </window>
+    </hbox>
+</zk>

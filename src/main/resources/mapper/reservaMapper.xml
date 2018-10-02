@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xoftix.mapper.ReservaMapper">
+
+	<resultMap id="reserveMap" type="reserva">
+		<result column="IDReserve" property="IDReserve" />
+		<result column="IDMovie" property="IDMovie" />
+		<result column="IDCliente" property="IDCliente" />
+		<result column="date" property="date" />
+	</resultMap>
+	
+	<sql id="sqlSelect">
+		SELECT
+		r.IDReserve,
+		r.IDMovie,
+		r.IDCliente,
+		r.date
+		FROM reserva r
+	</sql>
+	
+	<insert id="guardarReserva" parameterType="reserva" useGeneratedKeys="true"
+		keyColumn="IDReserve" keyProperty="IDReserve">
+		INSERT INTO reserva
+		(IDMovie, IDCliente, date)
+		VALUES (#{IDMovie}, #{IDCliente}, #{date})
+	</insert>
+	
+	<select id="findReservaId" resultMap="reserveMap" parameterType="java.lang.Long">
+		<include refid="sqlSelect"></include>
+		WHERE IDReserve = #{IDReserve}
+	</select>
+	
+	<select id="reserveList" resultType="java.util.List" >
+			SELECT
+			IDReserve,
+			IDMovie,
+			IDCliente,
+			date
+			FROM reserva
+	</select>
+	
+	<select id="findReservaPorCliente" parameterType="java.lang.Long" resultType="java.util.List"> 
+		<include refid="sqlSelect"></include>
+		IDCliente=#{IDCliente}
+	</select>
+	
+	<delete id="deleteReserva" parameterType="java.lang.Long">
+		DELETE FROM reserva WHERE IDReserve = #{IDReserve}
+	</delete>
+
+</mapper>
